@@ -12,7 +12,7 @@ before_install:
   - gcloud components update kubectl
   - gcloud auth activate-service-account --key-file service-account.json
   - gcloud config set project multi-k8s-274606
-  - gcloud config set compute/zone asia-southeast1-a
+  - gcloud config set compute/zone asia-northeast1-a
   - gcloud container clusters get-credentials multi-cluster
   - echo "$DOCK_PASSWORD" | docker login  -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t peem16/react-test -f ./client/Dockerfile.dev ./client
