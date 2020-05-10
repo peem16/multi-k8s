@@ -6,8 +6,7 @@ env:
     - SHA=$(git rev-parse HEAD)
     - CLOUDSDK_CORE_DISABLE_PROMPTS=1
 before_install:
-  - openssl aes-256-cbc -K $encrypted_9f3b5599b056_key -iv $encrypted_9f3b5599b056_iv 
-  -in service-account.json.enc -out service-account.json -d
+  - openssl aes-256-cbc -K $encrypted_9f3b5599b056_key -iv $encrypted_9f3b5599b056_iv -in service-account.json.enc -out service-account.json -d
   - curl https://sdk.cloud.google.com | bash > /dev/null;
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud components update kubectl
@@ -19,7 +18,7 @@ before_install:
   - docker build -t peem16/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-   - docker run -e CI=true peem16/react-test npm run test
+   - docker run -e CI=true peem16/docker-react npm run test
 
 deploy:
    provider: script
