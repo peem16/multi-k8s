@@ -7,14 +7,14 @@ spec:
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
-  commonName: k8s-multi.com
+  commonName: wattanai.com
   dnsNames:
-    - k8s-multi.com
-    - www.k8s-multi.com
+    - wattanai.com
+    - www.wattanai.com
   acme:
     config:
-      - http01: 
+      - http01:
           ingressClass: nginx
         domains:
-          - k8s-multi.com
-          - www.k8s-multi.com
+          - wattanai.com
+          - www.wattanai.com
