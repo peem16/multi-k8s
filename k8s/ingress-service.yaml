@@ -10,11 +10,11 @@ metadata:
 spec:
   tls:
     - hosts:
-        - k8s-multi.com
-        - www.k8s-multi.com
-      secretName: k8s-multi.com
+        - wattanai.com
+        - www.wattanai.com
+      secretName: wattanai.com
   rules:
-    - host: k8s-multi.com
+    - host: wattanai.com
       http:
         paths:
           - path: /?(.*)
@@ -25,7 +25,7 @@ spec:
             backend:
               serviceName: server-cluster-ip-service
               servicePort: 5000
-    - host: www.k8s-multi.com
+    - host: www.wattanai.com
       http:
         paths:
           - path: /?(.*)
