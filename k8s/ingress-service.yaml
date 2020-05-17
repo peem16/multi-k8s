@@ -12,7 +12,7 @@ spec:
     - hosts:
         - wattanai.com
         - www.wattanai.com
-      secretName: wattanai.com
+      secretName: wattanai-com
   rules:
     - host: wattanai.com
       http:
